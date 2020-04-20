@@ -15,7 +15,14 @@
     "test": "cross-env NODE_PATH=./src react-scripts test --env=jsdom",
     "eject": "cross-env NODE_PATH=./src react-scripts eject",
     "webpack-analyze": "node ./scripts/webpack-analyze.js",
-    "update-base": "node ./scripts/update-base.js"
+    "update-base": "node ./scripts/update-base.js",
+    "docker:release": "yarn docker:build && yarn docker:push",
+    "docker:build": "docker build -t waproject/waproject-base-web -f docker/prod/Dockerfile .",
+    "docker:push": "docker push waproject/waproject-base-web",
+    "docker:release:staging": "yarn docker:build:staging && yarn docker:push:staging",
+    "docker:build:staging": "docker build -t waproject/waproject-base-web:staging -f docker/prod/Dockerfile .",
+    "docker:push:staging": "docker push waproject/waproject-base-web:staging",
+    "deploy-server": "scripts/deploy-server.sh"
   },
   "husky": {
     "hooks": {
