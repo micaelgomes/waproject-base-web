@@ -14,7 +14,7 @@
     "build": "cross-env NODE_PATH=./src react-scripts build",
     "test": "cross-env NODE_PATH=./src react-scripts test --env=jsdom",
     "eject": "cross-env NODE_PATH=./src react-scripts eject",
-   "webpack-analyze": "node ./scripts/webpack-analyze.js",
+    "webpack-analyze": "node ./scripts/webpack-analyze.js",
     "update-base": "node ./scripts/update-base.js"
   },
   "husky": {
