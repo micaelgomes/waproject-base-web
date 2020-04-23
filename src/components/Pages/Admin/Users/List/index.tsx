@@ -21,12 +21,12 @@ import RefreshIcon from 'mdi-react/RefreshIcon';
 import React, { Fragment, memo, useCallback, useState } from 'react';
 import userService from 'services/user';
 
-import UserFormDialog from '../UserFormDialog';
+import FormDialog from '../FormDialog';
 import ListItem from './ListItem';
 
 const UserListPage = memo(() => {
   const [formOpened, setFormOpened] = useState(false);
-  const [current, setCurrent] = useState();
+  const [current, setCurrent] = useState<IUser>();
 
   const [params, mergeParams, loading, data, error, , refresh] = usePaginationObservable(
     params => userService.list(params),
@@ -62,7 +62,7 @@ const UserListPage = memo(() => {
       <Toolbar title='Usuários' />
 
       <Card>
-        <UserFormDialog opened={formOpened} user={current} onComplete={formCallback} onCancel={formCancel} />
+        <FormDialog opened={formOpened} user={current} onComplete={formCallback} onCancel={formCancel} />
 
         <CardLoader show={loading} />
 

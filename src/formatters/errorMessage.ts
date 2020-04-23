@@ -23,6 +23,10 @@ export function errorMessageFormatter(err: any): string {
         return 'Não conseguimos se comunicar com o servidor';
       }
 
+      if (err.status === 400) {
+        return `Dádos inválidos: ${err.data?.message ? `: ${err.data?.message}` : ''}`;
+      }
+
       return status[err.status] || 'Algo deu errado...';
     default:
       return 'Algo deu errado...';

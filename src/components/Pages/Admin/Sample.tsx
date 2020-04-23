@@ -31,7 +31,7 @@ const SamplePage = memo((props: {}) => {
 
   const openSelector = useCallback(() => setSelectorOpened(true), []);
   const onSelectorComplete = useCallback((image: IImageSelectorResult) => {
-    setImage(image.base64);
+    setImage(image?.base64);
     setSelectorOpened(false);
   }, []);
 
@@ -39,9 +39,9 @@ const SamplePage = memo((props: {}) => {
     <Fragment>
       <ImageSelector opened={selectorOpened} width={500} height={500} onComplete={onSelectorComplete} />
 
-      <Toolbar title='Extra'></Toolbar>
+      <Toolbar title='Extra' />
       <ToolbarTabs>
-        <Tabs value={0}>
+        <Tabs value={0} color='primary'>
           <Tab label='Image Cropper' />
           <Tab label='Nothing' />
         </Tabs>

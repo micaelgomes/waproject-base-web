@@ -26,7 +26,6 @@ interface IProps {
   width: number;
   height: number;
   onComplete: (result: IImageSelectorResult) => void;
-  classes?: any;
 }
 
 const useStyle = makeStyles({
@@ -46,7 +45,7 @@ const ImageSelector = memo((props: IProps) => {
   const classes = useStyle(props);
   const cropper = useRef<any>();
 
-  const [resizeTimeout, setResizeTimeout] = useState();
+  const [resizeTimeout, setResizeTimeout] = useState<any>();
   const [image, setImage] = useState<IImageReaderResult>();
   const [saving, setSaving] = useState(false);
   const [dimentions, setDimentions] = useState<{ width: number; height: number }>();
