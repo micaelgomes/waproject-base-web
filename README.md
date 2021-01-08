@@ -1,4 +1,4 @@
-Projeto Base React
+test-pratico
 ==================
 
 Utilize o VSCode, já está configurado com sugestão de extensões.

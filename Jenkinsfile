@@ -14,12 +14,12 @@ node {
     }
 
     stage ('Build container') {
-        app = docker.build("%DOCKER-IMAGE%", "-f ./prod/Dockerfile .")
+        app = docker.build("waproject/test-pratico", "-f ./prod/Dockerfile .")
     }
 
      stage('Publish to DockerHub') {
          if (env.BRANCH_NAME ==~ /(develop|master)/) {
-             withDockerRegistry([credentialsId: '%DOCKER-CREDENTIALS%', url: 'https://registry.hub.docker.com']) {
+             withDockerRegistry([credentialsId: 'uuid', url: 'https://registry.hub.docker.com']) {
                  app.push("${env.BRANCH_NAME}-${env.BUILD_NUMBER}")
                  app.push("${env.BRANCH_NAME}")
              }

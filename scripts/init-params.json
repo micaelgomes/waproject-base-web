@@ -1,0 +1,11 @@
+{
+  "project": "test-pratico",
+  "repository": "",
+  "endpointDev": "http://localhost:3001",
+  "endpointProd": "",
+  "dockerImage": "waproject/test-pratico",
+  "dockerCredentials": "uuid",
+  "sentryDsn": "",
+  "confirmed": true,
+  "slug": "test-pratico"
+}
