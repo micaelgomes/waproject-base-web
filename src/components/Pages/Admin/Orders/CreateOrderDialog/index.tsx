@@ -19,35 +19,6 @@ import * as yup from 'yup';
 import Toast from 'components/Shared/Toast';
 import { tap } from 'rxjs/operators';
 import { useObservable } from 'react-use-observable';
-// import NumberFormat from 'react-number-format';
-
-// interface NumberFormatCustomProps {
-//   inputRef: (instance: NumberFormat | null) => void;
-//   onChange: (event: { target: { name: string; value: string } }) => void;
-//   name: string;
-// }
-
-// function NumberFormatCustom(props: NumberFormatCustomProps) {
-//   const { inputRef, onChange, ...other } = props;
-
-//   return (
-//     <NumberFormat
-//       {...other}
-//       getInputRef={inputRef}
-//       onValueChange={(values) => {
-//         onChange({
-//           target: {
-//             name: props.name,
-//             value: values.value,
-//           },
-//         });
-//       }}
-//       thousandSeparator
-//       // isNumericString
-//       prefix="R$ "
-//     />
-//   );
-// }
 
 interface IProps {
   opened: boolean;
@@ -149,9 +120,6 @@ const CreateOrderDialog = memo((props: IProps) => {
                   InputProps={{
                     startAdornment: <InputAdornment position='start'>R$</InputAdornment>
                   }}
-                  // InputProps={{
-                  //   inputComponent: NumberFormatCustom as any,
-                  // }}
                   InputLabelProps={{
                     shrink: true
                   }}
