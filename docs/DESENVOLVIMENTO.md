@@ -17,7 +17,7 @@ yarn install # ou npm install
 
 node ./init.js # apenas caso não tenha iniciado o projeto ainda
 
-yarn dev # ou docker-compose up caso queira usar docker durante o dev
+yarn start # ou docker-compose up caso queira usar docker durante o dev
 ```
 
 Pronto, agora é só codar que ele reiniciará a aplicação com as alterações.
